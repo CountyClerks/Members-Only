@@ -1,7 +1,6 @@
 import '../nav.css'
-import { Navbar, Container, Nav, Button, Modal} from 'react-bootstrap'
+import { Navbar, Container, Nav} from 'react-bootstrap'
 export default function NavBar() {
-
     // const modalChange = () => {
         
     // }
@@ -13,8 +12,8 @@ export default function NavBar() {
                 <Navbar.Brand href="">Member's Only</Navbar.Brand>
                 <Navbar.Toggle aria-controls="basic-navbar-nav" />
                 <Nav className="me-auto">
-                    <Button>Sign Up</Button>
-                    <Button>Log In</Button>
+                    <Nav.Link href="#signup">Sign Up</Nav.Link>
+                    <Nav.Link href="#login">Log In</Nav.Link>
                 </Nav>
             </Container>
         </Navbar>
