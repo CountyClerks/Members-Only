@@ -1,10 +1,11 @@
 import NavBar from "../components/navbar"
 export default function Home() {
     return (
-        <main>
-            <section classname="nav">
+        <>
+        <NavBar />
+            {/* <section className="nav">
                 <NavBar></NavBar>
-            </section>
-        </main>
+            </section> */}
+        </>
     )
 }
