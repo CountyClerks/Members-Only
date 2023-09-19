@@ -1,8 +1,8 @@
 import './home.css'
 import { BrowserRouter, Routes, Route } from "react-router-dom"
 import Home from'./pages/home'
-import Login from './pages/login'
-import SignUp from './pages/signup'
+import Login from './pages/logIn'
+import SignUp from './pages/signUp'
 import NewMessage from './pages/newMessage'
 
 function App() {
