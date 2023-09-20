@@ -5,14 +5,12 @@ const logger = require('morgan');
 const compression = require('compression');
 const cors = require('cors')
 
-
 const indexRouter = require('./routes/index');
 const loginRouter = require('./routes/logIn')
 const newMessageRouter = require('./routes/newMessage')
 const signUpRouter = require('./routes/signUp')
 
 const app = express();
-
 
 app.use(cors());
 app.use(logger('dev'));
