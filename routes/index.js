@@ -1,9 +1,21 @@
-let express = require('express');
-const router = express.Router();
+const express = require('express')
+const router = express.Router()
+const Message = require('../models/message')
 
-/* GET home page. */
-router.get('/', function(req, res, next) {
-  res.render('index', { title: "Member's Only" });
-});
+const message_controller = require('../controllers/messageController')
+const user_controller = require('../controllers/userController')
 
-module.exports = router;
+//GET home page
+
+router.get('/', message_controller.index)
+
+router.get('/login', message_controller.index)
+router.post('/login', message_controller.index)
+
+router.get('/signup', message_controller.index)
+router.post('/signup', message_controller.index)
+
+router.get('/new-message', message_controller.index)
+router.post('/new-message', message_controller.index)
+
+module.exports = router
