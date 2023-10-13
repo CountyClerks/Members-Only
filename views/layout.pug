@@ -1,0 +1,16 @@
+doctype html
+html(lang='en')
+  head
+    title= title
+    meta(charset='utf-8')
+    meta(name='viewport', content='width=device-width, initial-scale=1')
+    link(rel='stylesheet', href='/stylesheets/style.css')
+  body
+    nav.navbar
+      a.navbar-brand(href='/')
+        p Member's Only
+      a.navbar-brand(href='/signup')
+        p Sign Up
+      a.navbar-brand(href='/login')
+        p Login
+    block content
