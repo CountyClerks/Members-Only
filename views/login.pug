@@ -3,7 +3,7 @@ extends layout
 block content
     h1=title
 
-    form(method='POST' action='')
+    form(id='submit-form' method='POST' action='/login')
         div.form-group
             label(for='username') Username:
             input#username.form-control(type='text' placeholder='', name='username' required='true' value=(undefined===username ? '' : user.username) )
