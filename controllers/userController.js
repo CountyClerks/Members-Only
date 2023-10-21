@@ -3,6 +3,7 @@ const asyncHandler = require('express-async-handler')
 const { body, validationResult } = require('express-validator')
 const bcrypt = require('bcryptjs')
 const passport = require('passport')
+const user = require('../models/user')
 
 
 //Display user log in form
@@ -53,15 +54,23 @@ exports.sign_up_post = [
                     const user = new User({
                         username: req.body.username,
                         password: hashedPassword,
-                    }).save(error => {
-                        if(error)  {
-                            return next(error) 
-                        }
-                        res.render('signup', {errors: [], succes:[{msg: 'You signed up successfully.'}], user: res.locals.currentUser})
+                    })
+                    // .then(
+                    //     res.render('signup', {errors: [], succes:[{msg: 'You signed up successfully.'}], user: res.locals.currentUser})
+                    // ).catch(error => {
+                    //     if(error)  {
+                    //         return next(error) 
+                    //     }
+                    // })
+                    user.save().then(() => {
+                        res.redirect('/')
+                    }).catch((error) => {
+                        console.log(error)
                     })
                 }
             })
-            res.redirect('/')
+            // await user.save()
+            // res.redirect('/')
         }
     })
 ]
