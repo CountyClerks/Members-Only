@@ -54,14 +54,9 @@ exports.sign_up_post = [
                     const user = new User({
                         username: req.body.username,
                         password: hashedPassword,
+                        member_status: true,
+                        admin: false,
                     })
-                    // .then(
-                    //     res.render('signup', {errors: [], succes:[{msg: 'You signed up successfully.'}], user: res.locals.currentUser})
-                    // ).catch(error => {
-                    //     if(error)  {
-                    //         return next(error) 
-                    //     }
-                    // })
                     user.save().then(() => {
                         res.redirect('/')
                     }).catch((error) => {
@@ -69,8 +64,6 @@ exports.sign_up_post = [
                     })
                 }
             })
-            // await user.save()
-            // res.redirect('/')
         }
     })
 ]
