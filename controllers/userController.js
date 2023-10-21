@@ -7,7 +7,7 @@ const passport = require('passport')
 
 //Display user log in form
 exports.log_in_get = (req, res) => {
-    res.render('login', {user: res.locals.currentUser})
+    res.render('login', {title: 'Log In', user: res.locals.currentUser})
 }
 
 //Log in user
