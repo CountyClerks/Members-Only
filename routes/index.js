@@ -9,10 +9,10 @@ const user_controller = require('../controllers/userController')
 
 router.get('/', message_controller.index)
 
-router.get('/login', message_controller.index)
+router.get('/login', user_controller.log_in_get)
 router.post('/login', message_controller.index)
 
-router.get('/signup', message_controller.index)
+router.get('/signup', user_controller.sign_up_get)
 router.post('/signup', message_controller.index)
 
 router.get('/new-message', message_controller.index)
