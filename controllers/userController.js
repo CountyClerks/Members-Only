@@ -54,7 +54,7 @@ exports.sign_up_post = [
                     const user = new User({
                         username: req.body.username,
                         password: hashedPassword,
-                        member_status: true,
+                        member_status: false,
                         admin: false,
                     })
                     user.save().then(() => {
