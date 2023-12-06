@@ -3,4 +3,13 @@ extends layout
 block content
     h1=title
 
-    
+    form(id='member_form' method='POST' action='/membership')
+        div.form-group
+            label(for='membership-code') Membership Code:
+            input#membership-code.form-control(type='text' placeholder='' required='true' value=(undefined===membership-code ? '' : user.member_status))
+        button.btn.btn-primary(type='submit') Become A Member!
+
+    if errors
+        ul
+            for error in errors
+                li!= error.msg
